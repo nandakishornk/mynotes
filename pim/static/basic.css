@@ -1,0 +1,117 @@
+.header 
+{  
+   top : 0px;
+   right : 0px;
+   left : 0px;
+   position : fixed;
+   background-color : #696969; 
+   color : #ffffff; 
+   text-align : left; 
+}
+
+.footer 
+{ 
+   bottom : 0px;
+   right : 0px;
+   left : 0px;
+   position : fixed;
+   background-color : #696969; 
+   color : #ffffff; 
+   text-align : center;
+   font-size : 15px; 
+}
+
+
+
+.button 
+{ 
+   background-color : #696969; 
+   color : #ffffff; 
+   text-align : center; 
+   cursor : pointer; 
+   display : inline-block; 
+   border : 0px; 
+   padding : 5px 10px;
+   font-size : 18px;
+}       
+
+.button2
+{
+  background-color: white; 
+  color:black; 
+  width:150px;
+  text-align : center; 
+  cursor : pointer; 
+  display : inline-block; 
+  border : 0px; 
+  padding : 5px 10px;
+}
+ 
+.wallpaper
+{
+  position : fixed;
+  left : 0px;
+  right : 0px;
+  top : 0px;
+  bottom : 0px;
+} 
+ 
+.dynamic_block 
+{  
+   position : fixed; 
+   left : 0px; 
+   right : 0px; 
+   top : 80px;
+   bottom : 40px; 
+   width : 100%;
+   height : 100%; 
+   text-align : center; 
+   vertical-align : center; 
+}
+
+.title_block
+{
+   text-align : left;
+   position : relative;
+   top : 15px;
+   width : 300px;
+   margin : auto auto;
+   height : 30%;
+   font-size:25px; 
+   line-height:50%;
+   bottom : 15px;
+   color :black;
+}
+
+.login
+{
+   position : relative;
+   margin : auto auto;
+   width : 80%;
+   height : 75%;
+   background : #696969;
+   border-radius : 35px;
+   text-align : center;
+   color : #ffffff;
+   opacity :90%;
+   vertical-align : center; 
+    
+}
+
+.table_block
+{
+   position : relative;
+   top : 0px;
+   bottom : 100px;
+   margin : auto auto;
+   width : 98%;
+   height : 86%;
+   overflow : scroll;
+   text-align : center; 
+}
+
+.error
+{
+  color : #ff0000;
+}
+
