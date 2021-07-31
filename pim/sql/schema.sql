@@ -1,0 +1,34 @@
+DROP TABLE IF EXISTS usr;
+DROP TABLE IF EXISTS notes;
+DROP TABLE IF EXISTS hashtags;
+DROP TABLE IF EXISTS notes_ht;
+
+
+CREATE TABLE usr (
+  usr_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  pass_wrd TEXT NOT NULL
+);
+
+CREATE TABLE notes (
+  note_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  note_admin INTEGER,
+  title TEXT NOT NULL,
+  created DATE,
+  description TEXT,
+  FOREIGN KEY (note_admin) REFERENCES usr (usr_id) ON DELETE CASCADE
+);
+
+CREATE TABLE hashtags (
+  ht_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ht_admin INTEGER,
+  hashtag TEXT,
+  FOREIGN KEY (ht_admin) REFERENCES usr (usr_id) ON DELETE CASCADE
+);
+
+CREATE TABLE notes_ht (
+  note INTEGER,
+  ht INTEGER,
+  FOREIGN KEY (note) REFERENCES notes (note_id) ON DELETE CASCADE,
+  FOREIGN KEY (ht) REFERENCES hashtags (ht_id) ON DELETE CASCADE
+);
