@@ -1,0 +1,10 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+  <div class="table_block" >
+    {% for x in hashtags %}
+    <a href="{{ url_for('pim.tag_search',tag=x[1]) }}">{{ x[0] }}</a><br>
+    {% endfor %} 
+  </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+  <div class="table_block">
+    <table border="0" style="width : 100%; text-align : center; overflow : scroll;">
+      <tr style="background : #696969; color : white; top : 0; position : sticky;">
+        <th style="padding:15px; text-align : center;">title</th>
+        <th style="padding:15px; text-align : center;">created</th>
+        <th style="padding:15px; text-align : center;"><a href="{{ url_for('pim.create_note') }}">Create new note</a></th>
+      </tr>
+      {% for note_id, title, created, description in notes %}
+      <tr style="background : #ffffff; color:black; text-align : center; height: 40px;">
+        <td><a href="{{ url_for('pim.view_note', note_id = note_id) }}">{{title}}</a></td>
+        <td>{{created}}</td>
+        <td><a href="{{ url_for('pim.edit_note',note_id=note_id) }}">Edit note</a></td>
+      </tr>
+      {% endfor %}
+    </table>  
+  </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+  <div class="login" >
+    {% if not note == None %}
+    <form action="{{ url_for('pim.edit_note',note_id=note[0]) }}" method="POST">
+    {% else %}
+    <form action="{{ url_for('pim.create_note') }}" method="POST">
+    {% endif %}
+      <br><br>
+      <label for="title" class="form_label">Title&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+      <textarea rows="1" type="text" id="title" name="title">{% if note %}{{note[1]}}{% endif %}</textarea><br>
+      <label for="hasgtags" class="form_label">Tags&nbsp;&nbsp;:&nbsp;</label>
+      {% if not note == None %}
+      {% if note %}
+      <textarea rows="1" type="text" id="hashtags" name="hashtags">
+      {% for x in hashtags %}{{x}}&nbsp;{% endfor %}
+      </textarea><br>
+      {% endif %}
+      {% else %}
+      <textarea rows="1" type="text" id="hashtags" name="hashtags"></textarea><br>
+      {% endif %}
+      
+      <label for="decription" class="form_label">Note&nbsp;&nbsp;:&nbsp;</label>
+      <textarea rows="10" id="description" name="description">{% if note %}{{note[2]}}{% endif %}</textarea><br><br>
+      <button class="button2" type="submit" name="submit">Save</button>   
+    </form>
+  </div>
+
+{% endblock %}

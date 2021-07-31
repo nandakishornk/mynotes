@@ -1,0 +1,29 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+    {% if error == 201 %}
+    <p class="error">!! Invalid Username !!</p>
+    {% elif error == 202 %}
+    <p class="error">!! Incorrect Password !!</p> 
+    {% elif error == 203 %}
+    <p class="error">!! Login to continue !!</p> 
+    {% else %}
+    <br>
+    {% endif %}
+    
+  <div class="login">
+    <br><br>
+    <b>LOGIN TO CONTINUE</b> 
+    <br><br><br>
+    <form action="{{ url_for('pim.login') }}" method="POST" style="position : relative;">
+      <label for="usr_name" class="form_label">Username&nbsp;:&nbsp;</label>
+      <input type = "text" id="usr_name" name="usr_name"></input><br><br>
+      <label for="pass" class="form_label">Password&nbsp;&nbsp;:&nbsp;</label>
+      <input type="password" id="pass" name="pass"></input><br>
+      <br><br>
+      <button type="submit" name="submit" class="button2">Login</button></form>
+      ------------------ OR ------------------<br><br>
+      <a href="{{ url_for('pim.register') }}"><button class="button2">Register user</button></a>
+  </div>
+
+{% endblock %}

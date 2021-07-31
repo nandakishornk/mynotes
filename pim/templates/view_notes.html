@@ -1,0 +1,18 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+  <div class="table_block" style="background-color : #ffffff;">
+    <table border="0" style="width : 100%; text-align : center; overflow : scroll;">
+      <tr style="background : #696969; color : white; top : 0; position : sticky;">
+        <th style="padding:15px; text-align : left;"><a href="{{ url_for('pim.delete_note',note_id=note[0]) }}">Delete note</a></th>
+        <th style="padding:15px; text-align : center;">{{ note[1] }}</th>
+        <th style="padding:15px; text-align : right;"><a href="{{ url_for('pim.edit_note',note_id=note[0]) }}">edit</a></th>
+      </tr>
+      <tr style="background : #8a8a8a; color:black; text-align : center; height: 40px;">
+        <td colspan=2>Hashtags : {% for x in hashtags %}{{ x }}&nbsp;{% endfor %}</td>
+        <td>{{ note[2] }}</td>
+      </tr>
+      <tr rowspan=10 style="background : #ffffff; opacity : 80%; color:black; text-align : center; height: 40px;">
+        <td colspan=3>{{ note[3] }}</td>  
+  </div>
+
+{% endblock %}

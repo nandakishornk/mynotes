@@ -1,0 +1,30 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+  
+    {% if error == 101 %}
+    <p class="error">!! Username already taken !!<br>Try a diffrent one</p>
+    {% elif error == 102 %}
+    <p class="error">!! Passwords don't match !!</p>
+    {% elif error == 103 %}
+    <p class="error">!! Password should contain minimum 8 characters !!</p>
+    {% else %}
+    <br>
+    {% endif %}
+  <div class="login">
+    <br><br><br>
+    REGISTER USER 
+    <br><br>
+    <form action="{{ url_for('pim.register') }}" method="POST">
+      <label for="new_usr" class="form_label">Create Username&nbsp;:&nbsp;</label>
+      <input type = "text" id="new_usr" name="new_usr"></input><br><br>
+      <label for="new_pass_1" class="form_label">Create Password&nbsp;&nbsp;:&nbsp;</label>
+      <input type="password" id="new_pass_1" name="new_pass_1"></input><br><br>
+      <label for="new_pass_2" class="form_label">Retype Password&nbsp;:&nbsp;</label>
+      <input type="password" id="new_pass_2" name="new_pass_2"></input><br>
+      <br><br>
+      <button type="submit" name="create_usr" class="button2">Create account</button>
+    </form>
+  </div>
+
+{% endblock %}

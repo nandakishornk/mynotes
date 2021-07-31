@@ -1,0 +1,17 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+    <div class ="title_block">
+    <p>Welcome to,</p><h1 style="font-size:50px;"><b>Personal<br>Information<br>Manager</b></h1></p><br><br><br>
+      {% if not g.user %}
+      <a href="{{ url_for('pim.login') }}"><button style="width:150px; height: 40px;" class="button">Login</button></a><br><br><br>
+      <a href="{{ url_for('pim.register') }}"><button style="height: 40px; width:150px;" class="button">Register</button></a><br> 
+      {% else %}
+      <p> Start creating notes</p><br><br>
+      <a href="{{ url_for('pim.create_note') }}"><button style="height: 40px; width:150px;" class="button">Create note</button></a><br><br><br>
+      {% endif %}
+    </div>
+    
+  
+
+{% endblock %}

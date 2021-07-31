@@ -1,0 +1,14 @@
+{% extends "base_site.html" %}
+{% block dynamic_block %}
+
+  <div class="login">
+    <br><br><br><br><br><br>
+    <form action="{{ url_for('pim.search') }}" method="POST">
+      <label for="search" class="form_label">Search&nbsp;:&nbsp;</label>
+      <input type = "text" id="search" name="search"></input><br>
+      <br>
+      <button type="submit" name="submit">Search</button><br><br>
+    </form>
+  </div>
+
+{% endblock %}
